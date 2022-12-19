@@ -34,9 +34,6 @@ const AllDecks = () => {
         ? (
           decks.map((deck) => {
             const { id, name, description } = deck;
-            const toDelete = () => {
-              deletehandler(id);
-            }
 
             return (
               <div className="card mb-2" key={id}>
@@ -51,7 +48,7 @@ const AllDecks = () => {
                       <Link to={`/decks/${id}`} role="button" className="btn btn-secondary card-link"><span className="oi oi-eye m-1" /> View</Link>
                       <Link to={`/decks/${id}/study`} role="button" className="btn btn-primary card-link"><span className="oi oi-book m-1" /> Study</Link>
                     </div>
-                    <button name="delete" className="btn btn-danger card-link" onClick={toDelete}><span className="oi oi-trash" /></button>
+                    <button name="delete" className="btn btn-danger card-link" onClick={() => deletehandler(id)}><span className="oi oi-trash" /></button>
                   </div>
                 </div>
               </div>
