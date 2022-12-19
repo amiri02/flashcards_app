@@ -4,7 +4,6 @@ import { deleteDeck, listDecks } from "../utils/api";
 
 const AllDecks = () => {
   const [ decks, setDecks ] = useState({name: "", description: "", cards: []})
-
   
   useEffect( () => {
     const abort = new AbortController();
@@ -25,11 +24,11 @@ const AllDecks = () => {
     
     return () => abort.abort();
   }
-  
+
   return (
     <>
       <Link to="/decks/new" role="button" className="btn btn-secondary mb-3">
-      <span className="oi oi-plus"></span> Create Deck
+      <span className="oi oi-plus m-1"></span> Create Deck
       </Link>
       { decks.length 
         ? (
@@ -49,10 +48,10 @@ const AllDecks = () => {
                   <p className="card-text text-muted">{description}</p>
                   <div className="d-flex justify-content-between">
                     <div>
-                      <Link to={`/decks/${id}`} role="button" className="btn btn-secondary card-link"><span className="oi oi-eye"></span> View</Link>
-                      <Link to={`/decks/${id}/study`} role="button" className="btn btn-primary card-link"><span className="oi oi-book"></span> Study</Link>
+                      <Link to={`/decks/${id}`} role="button" className="btn btn-secondary card-link"><span className="oi oi-eye m-1" /> View</Link>
+                      <Link to={`/decks/${id}/study`} role="button" className="btn btn-primary card-link"><span className="oi oi-book m-1" /> Study</Link>
                     </div>
-                    <button name="delete" className="btn btn-danger card-link" onClick={toDelete}><span className="oi oi-trash"></span></button>
+                    <button name="delete" className="btn btn-danger card-link" onClick={toDelete}><span className="oi oi-trash" /></button>
                   </div>
                 </div>
               </div>
